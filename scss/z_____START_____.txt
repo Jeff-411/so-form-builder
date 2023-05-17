@@ -1,0 +1,6 @@
+// Compressed
+sass --watch SCSS/main.scss outlook.live.com.css --no-source-map --style=compressed
+alias = sas
+
+// Expanded
+sass --watch SCSS/main.scss outlook.live.com.css --no-source-map --style=expanded

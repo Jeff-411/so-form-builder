@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="outlook.live.com.css" />
+    <style>
+      body {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px;
+      }
+      li {
+        margin-bottom: 18px;
+      }
+      #pane-left,
+      #pane-right {
+        width: 50%;
+      }
+      #pane-right {
+        padding-left: 40px;
+      }
+      #container-test-messages-to-style {
+        padding: 20px;
+        background: #f6f4f4;
+        border: 1px solid #000;
+      }
+      #form_userPrefs {
+        width: 100%;
+      }
+      #notes {
+        padding-right: 10px;
+      }
+    </style>
+    <title>FORMS</title>
+  </head>
+  <body>
+    <!-- Left pane ----------------------------------------------------------->
+    <div id="pane-left">
+      <header>
+        <p>
+          <strong>SCOPE</strong>: Handles object, number, string, and color
+          inputs <u>only</u>.
+        </p>
+      </header>
+
+      <div id="container-test-messages-to-style">
+        <p class="message">Test message 1</p>
+        <p class="message">Test message 2</p>
+      </div>
+
+      <div id="notes">
+        <h3><strong>Notes</strong></h3>
+        <ul></ul>
+      </div>
+    </div>
+
+    <!-- Right pane ---------------------------------------------------------->
+    <div id="pane-right">
+      <form id="form_userPrefs">
+        <div id="form_content"></div>
+        <footer id="form_footer">
+          <input type="submit" value="Submit" />
+        </footer>
+      </form>
+    </div>
+
+    <!-- Templates ----------------------------------------------------------->
+    <div id="templates">
+      <template id="formControl_text">
+        <p>
+          <label>
+            <input type="text" value="" />
+          </label>
+        </p>
+      </template>
+      <template id="formControl_number">
+        <p>
+          <label>
+            <input type="number" value="" />
+          </label>
+        </p>
+      </template>
+      <template id="formControl_color">
+        <p>
+          <label>
+            <input type="color" value="" />
+          </label>
+        </p>
+      </template>
+
+      <template id="formGroup">
+        <fieldset>
+          <legend></legend>
+        </fieldset>
+      </template>
+    </div>
+
+    <script src="./index.js" type="module"></script>
+  </body>
+</html>

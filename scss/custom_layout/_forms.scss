@@ -1,0 +1,48 @@
+form {
+  width: fit-content;
+
+  * {
+    font-size: 26px;
+    background-color: white;
+  }
+  * :not([type='color']) {
+    font-weight: 600;
+    color: black;
+  }
+  section {
+    display: inline-block;
+  }
+  fieldset {
+    margin-bottom: 10px;
+  }
+  legend {
+    font-size: 32px;
+  }
+  title {
+    display: block;
+    padding: 10px 0;
+  }
+  [type='number'] {
+    width: 150px;
+    padding: 8px;
+    margin-bottom: 20px;
+  }
+  footer {
+    text-align: center;
+  }
+  button {
+    padding: 10px 20px;
+    font-size: 28px;
+    font-weight: 600;
+    color: #fff !important;
+    background-color: blue;
+    border-radius: 12px;
+  }
+  #sections {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+    gap: 20px;
+    padding: 10px;
+  }
+}
