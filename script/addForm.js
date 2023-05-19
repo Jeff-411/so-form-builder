@@ -5,46 +5,22 @@
  *         https://javascript.tutorialink.com/create-html-form-from-any-nested-js-objects/
  
 */
-import { defaultUserVars } from './userVars.js'
+import { handleLocalStorage } from './handleLocalStorage.js'
 
 export const addForm = () => {
   const formGroup = document.querySelector('#formGroup')
   const insertionPoint = document.querySelector('#form_content')
-
-  // SAVE FORM INPUTS
-  const store = {
-    handleLocalStorage: () => {
-      //
-      // localStorage.clear() // <-- DEBUG: UNCOMMENT THIS LINE TO CLEAR LOCAL STORAGE
-
-      let user = null
-      // Check if user object exists in local storage
-      if (localStorage.getItem('user') === null) {
-        // If not, create it and save it to local storage
-        user = defaultUserVars
-
-        localStorage.setItem('user', JSON.stringify(user))
-
-        return user
-      } else {
-        // If it does, load it from local storage
-        user = JSON.parse(localStorage.getItem('user'))
-
-        return user
-      }
-    },
-  }
-  const user = store.handleLocalStorage()
-
-  // CREATE FORM
+  const user = handleLocalStorage()
   const obj = user
 
+  // CREATE THE FORM
   // Add <lable>s & <input>s to the <fieldset>.
   const addFormControl = (obj, group) => {
     // Loop through the main object & any nested objects.
     for (const [key, value] of Object.entries(obj)) {
       let control = null
       let typeOfInput = ''
+      // if (typeof value === 'object') control = addFormGroup(key, value)
 
       typeof value === 'object'
         ? // Handle nested objects (This is the recursive call).
