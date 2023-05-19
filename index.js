@@ -5,12 +5,11 @@
  *         https://javascript.tutorialink.com/create-html-form-from-any-nested-js-objects/
  
 */
-import { handleLocalStorage } from './script/handleLocalStorage.js'
+import { handleLocalStorage } from './script/store.js'
 import { createBaseForm } from './script/createBaseForm.js'
 import { addSpecialInputsToBase } from './script/addSpecialInputsToBase.js'
 import { addListeners } from './script/addListeners.js'
 
-// localStorage.clear() // <-- DEBUG: UNCOMMENT THIS LINE TO CLEAR LOCAL STORAGE
 const user = handleLocalStorage()
 
 createBaseForm(user)
