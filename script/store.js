@@ -1,9 +1,9 @@
 import { defaultUserVars } from './userVars.js'
 
-// DEBUG - See "DEBUG" in index.js to clear local storage. (~ ln 13)
-
 export const handleLocalStorage = () => {
   let user = null
+
+  // localStorage.clear() // <-- DEBUG: UNCOMMENT THIS LINE TO CLEAR LOCAL STORAGE
 
   // If the user object does not exist in local storage,
   // create it and save it to local storage.

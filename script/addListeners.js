@@ -18,8 +18,8 @@ export const addListeners = (user) => {
         user.fonts.textColors.accent = data.accent
 
         user.layout1.ctrlBarWidth_px = Number(data.ctrlBarWidth_px)
-        user.layout1.ctrlBarPrimaryHeight_rem = Number(
-          data.ctrlBarPrimaryHeight_rem
+        user.layout1.ctrlBarPrimaryHeight_px = Number(
+          data.ctrlBarPrimaryHeight_px
         )
         user.layout1.triggerTopPanesHeight = Number(data.triggerTopPanesHeight)
         user.layout1.triggerNavpaneHeight = Number(data.triggerNavpaneHeight)

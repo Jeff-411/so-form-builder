@@ -2,6 +2,81 @@
 export const createBaseForm = (user) => {
   const obj = user
 
+  const setControlContent = (key, type) => {
+    switch (key) {
+      case 'fonts':
+        if (type === 'msg') return ''
+        if (type === 'label') return 'Fonts'
+        break
+      case 'fontScale':
+        if (type === 'msg') return ''
+        if (type === 'label') return 'Scale'
+        break
+      case 'fontWeight':
+        if (type === 'msg') return ''
+        if (type === 'label') return 'Weight'
+        break
+      case 'textColors':
+        if (type === 'msg') return ''
+        if (type === 'label') return 'Colors'
+        break
+      case 'normal':
+        if (type === 'msg') return ''
+        if (type === 'label') return 'Normal'
+
+        break
+      case 'accent':
+        if (type === 'msg') return ''
+        if (type === 'label') return 'Accent'
+        break
+      case 'layout1':
+        if (type === 'msg') return ''
+        if (type === 'label') return 'Layout1'
+        break
+      case 'ctrlBarWidth_px':
+        if (type === 'msg') return ''
+        if (type === 'label') return 'Width of bar'
+        break
+      case 'ctrlBarPrimaryHeight_px':
+        if (type === 'msg') return ''
+        if (type === 'label') return 'Button 1 - Height'
+        break
+      case 'triggerTopPanesHeight':
+        if (type === 'msg') return ''
+        if (type === 'label') return 'Button 2 - Height'
+        break
+      case 'triggerNavpaneHeight':
+        if (type === 'msg') return ''
+        if (type === 'label') return 'Button 3 - Height'
+        break
+
+      case 'triggerLeftRailHeight':
+        if (type === 'msg') return ''
+        if (type === 'label') return 'Button 4 - Height'
+        break
+      case 'triggerUserBg':
+        if (type === 'msg') return ''
+        if (type === 'label') return 'Button 1 - Color'
+        break
+      case 'triggerTopPanesBg':
+        if (type === 'msg') return ''
+        if (type === 'label') return 'Button 2 - Color'
+        break
+
+      case 'triggerNavpaneBg':
+        if (type === 'msg') return ''
+        if (type === 'label') return 'Button 3 - Color'
+        break
+
+      case 'triggerLeftRailBg':
+        if (type === 'msg') return ''
+        if (type === 'label') return 'Button 4 - Color'
+        break
+      default:
+        alert(`UNKNOWN KEY - ${key}`)
+    }
+  }
+
   // Add a form-control (<label>, <input>, etc.) to the form-group.
   const addFormControl = (obj, group) => {
     // Loop through the main object & any nested objects.
@@ -9,11 +84,10 @@ export const createBaseForm = (user) => {
       let control = null
       let typeOfInput = ''
 
-      typeof value === 'object'
-        ? // Handle nested objects (This is the recursive call).
-          (control = addFormGroup(key, value))
-        : // Add the <label>, <input>, etc. to the current <fieldset>.
-          addFormControl()
+      // Recurse: If this is a nested object, get the next form-group.
+      if (typeof value === 'object') control = addFormGroup(key, value)
+      // Otherwise, just append the current form-control to the form
+      else addFormControl()
 
       function addFormControl() {
         // Determine the type of input to use.
@@ -33,9 +107,7 @@ export const createBaseForm = (user) => {
         let formControl = document.getElementById(`formControl_${typeOfInput}`)
         control = formControl.content.cloneNode(true)
 
-        control
-          .querySelector('label')
-          .prepend(key.charAt(0).toUpperCase() + key.slice(1))
+        control.querySelector('label').prepend(setControlContent(key, 'label'))
 
         // Set the input
         const input = control.querySelector('input')
@@ -55,10 +127,9 @@ export const createBaseForm = (user) => {
           case 'triggerTopPanesHeight':
           case 'triggerNavpaneHeight':
           case 'triggerLeftRailHeight':
+          case 'ctrlBarPrimaryHeight_px':
             input.step = 10
             break
-          case 'ctrlBarPrimaryHeight_rem':
-            input.step = 0.25
           default:
             break
         }

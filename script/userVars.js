@@ -17,7 +17,7 @@ export let defaultUserVars = {
   layout1: {
     // Control bar
     ctrlBarWidth_px: 20,
-    ctrlBarPrimaryHeight_rem: 2,
+    ctrlBarPrimaryHeight_px: 10,
 
     // Control bar content
     triggerTopPanesHeight: 10,

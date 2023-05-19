@@ -24,8 +24,8 @@
   }
 
   #ctrlBar-primary {
-    // height: var(--ctrlBarPrimaryHeight_rem);
-    height: 2rem;
+    // height: var(--ctrlBarPrimaryHeight_px);
+    height: 10px;
 
     #trigger-user {
       height: 100%;
@@ -37,13 +37,13 @@
   #ctrlBar-secondary {
     display: flex;
     flex-direction: column;
-    // height: calc(100vh - var(--ctrlBarPrimaryHeight_rem));
-    height: calc(100vh - 2rem);
+    // height: calc(100vh - var(--ctrlBarPrimaryHeight_px));
+    height: calc(100vh - 10px);
 
     #trigger-topPanes,
     #trigger-leftRail {
-      // height: calc(var(--ctrlBarPrimaryHeight_rem) * 1.235); // magic number
-      height: calc(2rem * 1.235); // magic number
+      // height: calc(var(--ctrlBarPrimaryHeight_px) * 1.235); // magic number
+      height: calc(10px * 1.235); // magic number
     }
 
     #trigger-topPanes {
