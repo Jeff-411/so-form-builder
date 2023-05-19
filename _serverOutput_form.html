@@ -1,0 +1,180 @@
+<!--  This is the form content that will be returned by the online
+      server (once there _is_ an online server!). For now -- while
+      using "Live Server" locally -- it is just a copy/paste of
+      <#form_userPrefs> in the dev console.
+-->
+<form id="form_userPrefs">
+  <div id="form_content">
+    <fieldset id="Preferences">
+      <legend>Preferences</legend>
+
+      <fieldset id="fonts">
+        <legend>Fonts</legend>
+
+        <p>
+          <label
+            >FontScale
+            <input
+              type="number"
+              value=""
+              name="fontScale"
+              id="fontScale"
+              step="0.5"
+            />
+          </label>
+        </p>
+
+        <p>
+          <label
+            >FontWeight
+            <input
+              type="number"
+              value=""
+              name="fontWeight"
+              id="fontWeight"
+              step="100"
+            />
+          </label>
+        </p>
+
+        <fieldset id="textColors">
+          <legend>TextColors</legend>
+
+          <p>
+            <label
+              >Normal
+              <input type="color" value="" name="normal" id="normal" />
+            </label>
+          </p>
+
+          <p>
+            <label
+              >Accent
+              <input type="color" value="" name="accent" id="accent" />
+            </label>
+          </p>
+        </fieldset>
+      </fieldset>
+
+      <fieldset id="layout1">
+        <legend>Layout1</legend>
+
+        <p>
+          <label
+            >CtrlBarWidth_px
+            <input
+              type="number"
+              value=""
+              name="ctrlBarWidth_px"
+              id="ctrlBarWidth_px"
+              step="10"
+            />
+          </label>
+        </p>
+
+        <p>
+          <label
+            >CtrlBarPrimaryHeight_rem
+            <input
+              type="number"
+              value=""
+              name="ctrlBarPrimaryHeight_rem"
+              id="ctrlBarPrimaryHeight_rem"
+              step="0.25"
+            />
+          </label>
+        </p>
+
+        <p>
+          <label
+            >TriggerTopPanesHeight
+            <input
+              type="number"
+              value=""
+              name="triggerTopPanesHeight"
+              id="triggerTopPanesHeight"
+              step="10"
+            />
+          </label>
+        </p>
+
+        <p>
+          <label
+            >TriggerNavpaneHeight
+            <input
+              type="number"
+              value=""
+              name="triggerNavpaneHeight"
+              id="triggerNavpaneHeight"
+              step="10"
+            />
+          </label>
+        </p>
+
+        <p>
+          <label
+            >TriggerLeftRailHeight
+            <input
+              type="number"
+              value=""
+              name="triggerLeftRailHeight"
+              id="triggerLeftRailHeight"
+              step="10"
+            />
+          </label>
+        </p>
+
+        <p>
+          <label
+            >TriggerUserBg
+            <input
+              type="color"
+              value=""
+              name="triggerUserBg"
+              id="triggerUserBg"
+            />
+          </label>
+        </p>
+
+        <p>
+          <label
+            >TriggerTopPanesBg
+            <input
+              type="color"
+              value=""
+              name="triggerTopPanesBg"
+              id="triggerTopPanesBg"
+            />
+          </label>
+        </p>
+
+        <p>
+          <label
+            >TriggerNavpaneBg
+            <input
+              type="color"
+              value=""
+              name="triggerNavpaneBg"
+              id="triggerNavpaneBg"
+            />
+          </label>
+        </p>
+
+        <p>
+          <label
+            >TriggerLeftRailBg
+            <input
+              type="color"
+              value=""
+              name="triggerLeftRailBg"
+              id="triggerLeftRailBg"
+            />
+          </label>
+        </p>
+      </fieldset>
+    </fieldset>
+  </div>
+  <footer id="form_footer">
+    <input type="submit" value="Submit" />
+  </footer>
+</form>
