@@ -5,13 +5,13 @@
  *         https://javascript.tutorialink.com/create-html-form-from-any-nested-js-objects/
  
 */
-import { handleLocalStorage } from './script/variables/store.js'
+import { getUser } from './script/variables/store.js'
 import { addListeners } from './script/helpers/listeners.js'
 import { testForm_styleMessages } from './script/helpers/testForm.js'
 import { addBaseForm } from './script/baseForm.js'
 import { addSpecialInputs } from './script/specialInputs.js'
 
-const user = handleLocalStorage()
+const user = getUser()
 
 addBaseForm(user)
 addListeners(user)

@@ -1,6 +1,6 @@
 import { defaultUserVars } from './userVars.js'
 
-export const handleLocalStorage = () => {
+export const getUser = () => {
   let user = null
 
   // localStorage.clear() // <-- DEBUG: UNCOMMENT THIS LINE TO CLEAR LOCAL STORAGE

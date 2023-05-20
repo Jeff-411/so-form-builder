@@ -1,6 +1,6 @@
-import { handleLocalStorage } from '../variables/store.js'
+import { getUser } from '../variables/store.js'
 
-const user = handleLocalStorage()
+const user = getUser()
 
 export const testForm_styleMessages = () => {
   let messages = document.querySelectorAll('.message')
