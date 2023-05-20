@@ -1,7 +1,7 @@
 import { setInnerText } from './helpers/setInnerText.js'
 
 // Scope: The base form handles object, number, string, and color inputs only.
-export const createBaseForm = (user) => {
+export const addBaseForm = (user) => {
   const obj = user
 
   // Add a form-control (<label>, <input>, etc.) to the form-group.

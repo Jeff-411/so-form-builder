@@ -7,24 +7,13 @@
 */
 import { handleLocalStorage } from './script/variables/store.js'
 import { addListeners } from './script/helpers/listeners.js'
-import { createBaseForm } from './script/baseForm.js'
+import { testForm_styleMessages } from './script/helpers/testForm.js'
+import { addBaseForm } from './script/baseForm.js'
 import { addSpecialInputs } from './script/specialInputs.js'
 
 const user = handleLocalStorage()
 
-createBaseForm(user)
+addBaseForm(user)
 addListeners(user)
 
-// Test form output
-const tests = {
-  styleMessages: () => {
-    let messages = document.querySelectorAll('.message')
-    messages.forEach((message) => {
-      message.style.fontSize = `${user.fonts.fontScale}rem`
-      message.style.fontWeight = user.fonts.fontWeight
-      message.style.color = user.fonts.textColors.normal
-    })
-  },
-}
-
-tests.styleMessages()
+testForm_styleMessages()
