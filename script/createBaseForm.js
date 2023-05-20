@@ -1,81 +1,8 @@
+import { setInnerText } from './setInnerText.js'
+
 // Scope: The base form handles object, number, string, and color inputs only.
 export const createBaseForm = (user) => {
   const obj = user
-
-  const setControlContent = (key, type) => {
-    switch (key) {
-      case 'fonts':
-        if (type === 'msg') return ''
-        if (type === 'label') return 'Fonts'
-        break
-      case 'fontScale':
-        if (type === 'msg') return ''
-        if (type === 'label') return 'Scale'
-        break
-      case 'fontWeight':
-        if (type === 'msg') return ''
-        if (type === 'label') return 'Weight'
-        break
-      case 'textColors':
-        if (type === 'msg') return ''
-        if (type === 'label') return 'Colors'
-        break
-      case 'normal':
-        if (type === 'msg') return ''
-        if (type === 'label') return 'Normal'
-
-        break
-      case 'accent':
-        if (type === 'msg') return ''
-        if (type === 'label') return 'Accent'
-        break
-      case 'layout1':
-        if (type === 'msg') return ''
-        if (type === 'label') return 'Layout1'
-        break
-      case 'ctrlBarWidth_px':
-        if (type === 'msg') return ''
-        if (type === 'label') return 'Width of bar'
-        break
-      case 'ctrlBarPrimaryHeight_px':
-        if (type === 'msg') return ''
-        if (type === 'label') return 'Button 1 - Height'
-        break
-      case 'triggerTopPanesHeight':
-        if (type === 'msg') return ''
-        if (type === 'label') return 'Button 2 - Height'
-        break
-      case 'triggerNavpaneHeight':
-        if (type === 'msg') return ''
-        if (type === 'label') return 'Button 3 - Height'
-        break
-
-      case 'triggerLeftRailHeight':
-        if (type === 'msg') return ''
-        if (type === 'label') return 'Button 4 - Height'
-        break
-      case 'triggerUserBg':
-        if (type === 'msg') return ''
-        if (type === 'label') return 'Button 1 - Color'
-        break
-      case 'triggerTopPanesBg':
-        if (type === 'msg') return ''
-        if (type === 'label') return 'Button 2 - Color'
-        break
-
-      case 'triggerNavpaneBg':
-        if (type === 'msg') return ''
-        if (type === 'label') return 'Button 3 - Color'
-        break
-
-      case 'triggerLeftRailBg':
-        if (type === 'msg') return ''
-        if (type === 'label') return 'Button 4 - Color'
-        break
-      default:
-        alert(`UNKNOWN KEY - ${key}`)
-    }
-  }
 
   // Add a form-control (<label>, <input>, etc.) to the form-group.
   const addFormControl = (obj, group) => {
@@ -86,7 +13,7 @@ export const createBaseForm = (user) => {
 
       // Recurse: If this is a nested object, get the next form-group.
       if (typeof value === 'object') control = addFormGroup(key, value)
-      // Otherwise, just append the current form-control to the form
+      // Otherwise, add the current form-control to the current form-group
       else addFormControl()
 
       function addFormControl() {
@@ -103,13 +30,15 @@ export const createBaseForm = (user) => {
             alert(`UNKNOWN INPUT TYPE - ${typeof value}`)
         }
 
-        // Set the formControl template to the correct input type.
+        // Get the correct template for the type of input.
         let formControl = document.getElementById(`formControl_${typeOfInput}`)
         control = formControl.content.cloneNode(true)
 
-        control.querySelector('label').prepend(setControlContent(key, 'label'))
+        // Set the control's label.
+        control.querySelector('label').prepend(setInnerText(key))
+        // control.querySelector('label').prepend(setControlContent(key, 'label'))
 
-        // Set the input
+        // Set the control's input
         const input = control.querySelector('input')
         input.name = key
         input.id = key
@@ -150,8 +79,7 @@ export const createBaseForm = (user) => {
     group.querySelector('fieldset').id = key
 
     // Set the legend of the fieldset from the key (e.g. 'fonts' or 'textColors').
-    group.querySelector('legend').textContent =
-      key.charAt(0).toUpperCase() + key.slice(1)
+    group.querySelector('legend').textContent = setInnerText(key)
 
     addFormControl(obj, group)
     return group
