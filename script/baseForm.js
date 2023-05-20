@@ -1,4 +1,4 @@
-import { setInnerText } from './setInnerText.js'
+import { setInnerText } from './helpers/setInnerText.js'
 
 // Scope: The base form handles object, number, string, and color inputs only.
 export const createBaseForm = (user) => {
