@@ -3,7 +3,7 @@ import { defaultUserVars } from './userVars.js'
 export const getUser = () => {
   let user = null
 
-  // localStorage.clear() // <-- DEBUG: UNCOMMENT THIS LINE TO CLEAR LOCAL STORAGE
+  localStorage.clear() // <-- DEBUG: UNCOMMENT THIS LINE TO CLEAR LOCAL STORAGE
 
   // If the user object does not exist in local storage,
   // create it and save it to local storage.

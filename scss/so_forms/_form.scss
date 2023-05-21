@@ -1,0 +1,54 @@
+// Elements
+form {
+  * {
+    font-size: 26px;
+    background-color: white;
+  }
+  * :not([type='color']) {
+    font-weight: 600;
+    color: black;
+  }
+  fieldset {
+    margin-bottom: 10px;
+  }
+  legend {
+    font-size: 32px;
+  }
+  .tips {
+    * {
+      width: 100%;
+    }
+    .container-tip {
+      margin: 10px 0 20px;
+      cursor: pointer;
+    }
+    .tip {
+      padding: 10px;
+      line-height: 1.4;
+    }
+  }
+  [type='number'] {
+    width: 150px;
+    padding: 8px;
+    margin-bottom: 20px;
+  }
+
+  [type='submit'] {
+    padding: 10px 20px;
+    font-size: 28px;
+    font-weight: 600;
+    color: #fff !important;
+    background-color: blue;
+    cursor: pointer;
+    border-radius: 12px;
+  }
+}
+
+// Specific fieldsets
+#ctrlTriggerBg {
+  > div:not(.tips) {
+    display: inline-block;
+  }
+}
+
+// Tips

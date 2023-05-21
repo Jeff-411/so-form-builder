@@ -5,34 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="outlook.live.com.css" />
-    <style>
-      body {
-        display: flex;
-        justify-content: space-between;
-        padding: 20px;
-      }
-      li {
-        margin-bottom: 18px;
-      }
-      #pane-left,
-      #pane-right {
-        width: 50%;
-      }
-      #pane-right {
-        padding-left: 40px;
-      }
-      #container-test-messages-to-style {
-        padding: 20px;
-        background: #f6f4f4;
-        border: 1px solid #000;
-      }
-      #form_userPrefs {
-        width: 100%;
-      }
-      #notes {
-        padding-right: 10px;
-      }
-    </style>
     <title>FORMS</title>
   </head>
   <body>
@@ -69,31 +41,61 @@
     <!-- Templates ----------------------------------------------------------->
     <div id="templates">
       <template id="formControl_text">
-        <p>
+        <div>
           <label>
             <input type="text" value="" />
           </label>
-        </p>
+        </div>
       </template>
       <template id="formControl_number">
-        <p>
+        <div>
           <label>
             <input type="number" value="" />
           </label>
-        </p>
+        </div>
       </template>
       <template id="formControl_color">
-        <p>
+        <div>
           <label>
             <input type="color" value="" />
           </label>
-        </p>
+        </div>
       </template>
 
       <template id="formGroup">
         <fieldset>
           <legend></legend>
+          <div class="tips"></div>
         </fieldset>
+      </template>
+
+      <template id="template__tip_fonts">
+        <div class="container-tip">
+          <details>
+            <summary>Inbox messages</summary>
+            <div class="tip">
+              These settings affect the fonts used for your Inbox messages.
+            </div>
+          </details>
+        </div>
+      </template>
+
+      <template id="template__tip_ctrlTriggerBg">
+        <div class="container-tip">
+          <details>
+            <summary>Top to bottom</summary>
+            <div class="tip">
+              These are the buttons you use to show:
+              <ol>
+                <li>this Preferences pane</li>
+                <li>the Ribbon menu and the Site header</li>
+                <li>the Folders pane</li>
+                <li>the Apps pane</li>
+              </ol>
+              These settings affect the fonts used for your Inbox messages.
+            </div>
+          </details>
+        </div>
       </template>
     </div>
 
