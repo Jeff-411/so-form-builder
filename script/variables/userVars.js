@@ -15,17 +15,16 @@ export let defaultUserVars = {
   //   layout: 0,
   // },
   layout1: {
-    // Control bar
-    ctrlBarWidth_px: 20,
-    ctrlBarPrimaryHeight_px: 10,
+    ctrlBarWidth: 20,
+    ctrlTriggerShort: 10,
+    ctrlTriggerTall: 80,
 
     // Control bar content
-    triggerTopPanesHeight: 10,
-    triggerNavpaneHeight: 80,
-    triggerLeftRailHeight: 10,
-    triggerUserBg: '#ff0000',
-    triggerTopPanesBg: '#0000ff',
-    triggerNavpaneBg: '#00ff00',
-    triggerLeftRailBg: '#f500d4',
+    ctrlTriggerBg: {
+      triggerPrefs: '#ff0000',
+      triggerTopPanes: '#0000ff',
+      triggerNavpane: '#00ff00',
+      triggerLeftRail: '#f500d4',
+    },
   },
 }

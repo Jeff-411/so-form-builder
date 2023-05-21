@@ -1,4 +1,5 @@
-import { setInnerText } from './helpers/setInnerText.js'
+// import { setText_names, addTip } from './helpers/setText.js'
+import { setText_names, addTip } from './helpers/setContent.js'
 
 // Scope: The base form handles object, number, string, and color inputs only.
 export const addBaseForm = (user) => {
@@ -35,7 +36,7 @@ export const addBaseForm = (user) => {
         control = formControl.content.cloneNode(true)
 
         // Set the control's label.
-        control.querySelector('label').prepend(setInnerText(key))
+        control.querySelector('label').prepend(setText_names(key))
         // control.querySelector('label').prepend(setControlContent(key, 'label'))
 
         // Set the control's input
@@ -79,7 +80,14 @@ export const addBaseForm = (user) => {
     group.querySelector('fieldset').id = key
 
     // Set the legend of the fieldset from the key (e.g. 'fonts' or 'textColors').
-    group.querySelector('legend').textContent = setInnerText(key)
+    group.querySelector('legend').textContent = setText_names(key)
+
+    // Append the content of a tip template to the form-group's <section> if applicable.
+    if (addTip(key)) {
+      const tipTemplate = document.querySelector(`#template__tip_${key}`)
+      const tip = tipTemplate.content.cloneNode(true)
+      group.querySelector('.tips').appendChild(tip)
+    }
 
     addFormControl(obj, group)
     return group

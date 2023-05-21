@@ -1,0 +1,26 @@
+body {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+li {
+  margin-bottom: 18px;
+}
+#pane-left,
+#pane-right {
+  width: 50%;
+}
+#pane-right {
+  padding-left: 40px;
+}
+#container-test-messages-to-style {
+  padding: 20px;
+  background: #f6f4f4;
+  border: 1px solid #000;
+}
+#form_userPrefs {
+  width: 100%;
+}
+#notes {
+  padding-right: 10px;
+}
