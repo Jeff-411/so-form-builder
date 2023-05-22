@@ -10,12 +10,7 @@
   <body>
     <!-- Left pane ----------------------------------------------------------->
     <div id="pane-left">
-      <header>
-        <p>
-          <strong>SCOPE</strong>: Handles object, number, string, and color
-          inputs <u>only</u>.
-        </p>
-      </header>
+      <header></header>
 
       <div id="container-test-messages-to-style">
         <p class="message">Test message 1</p>
@@ -39,64 +34,84 @@
     </div>
 
     <!-- Templates ----------------------------------------------------------->
-    <div id="templates">
-      <template id="formControl_text">
-        <div>
-          <label>
-            <input type="text" value="" />
-          </label>
-        </div>
-      </template>
-      <template id="formControl_number">
-        <div>
-          <label>
-            <input type="number" value="" />
-          </label>
-        </div>
-      </template>
-      <template id="formControl_color">
-        <div>
-          <label>
-            <input type="color" value="" />
-          </label>
-        </div>
-      </template>
+    <div class="TEMPLATES">
+      <div class="FORM_GROUP">
+        <template id="formGroup">
+          <fieldset>
+            <legend></legend>
+            <div class="group--tip-content"></div>
+          </fieldset>
+        </template>
+      </div>
 
-      <template id="formGroup">
-        <fieldset>
-          <legend></legend>
-          <div class="tips"></div>
-        </fieldset>
-      </template>
+      <div class="TIPS">
+        <template id="template__tip_fonts">
+          <div class="container-tip">
+            <details>
+              <summary>Inbox messages</summary>
+              <div class="tip">
+                These settings affect the fonts used for your Inbox messages.
+              </div>
+            </details>
+          </div>
+        </template>
 
-      <template id="template__tip_fonts">
-        <div class="container-tip">
-          <details>
-            <summary>Inbox messages</summary>
-            <div class="tip">
-              These settings affect the fonts used for your Inbox messages.
-            </div>
-          </details>
-        </div>
-      </template>
+        <template id="template__tip_ctrlTriggerBg">
+          <div class="container-tip">
+            <details>
+              <summary>Top to bottom</summary>
+              <div class="tip">
+                These are the buttons you use to show:
+                <ol>
+                  <li>this Preferences pane</li>
+                  <li>the Ribbon menu and the Site header</li>
+                  <li>the Folders pane</li>
+                  <li>the Apps pane</li>
+                </ol>
+                These settings affect the fonts used for your Inbox messages.
+              </div>
+            </details>
+          </div>
+        </template>
+      </div>
 
-      <template id="template__tip_ctrlTriggerBg">
-        <div class="container-tip">
-          <details>
-            <summary>Top to bottom</summary>
-            <div class="tip">
-              These are the buttons you use to show:
-              <ol>
-                <li>this Preferences pane</li>
-                <li>the Ribbon menu and the Site header</li>
-                <li>the Folders pane</li>
-                <li>the Apps pane</li>
-              </ol>
-              These settings affect the fonts used for your Inbox messages.
-            </div>
-          </details>
-        </div>
-      </template>
+      <div class="FORM_CONTROLS">
+        <template id="formControl_text">
+          <div>
+            <label>
+              <input type="text" value="" />
+            </label>
+          </div>
+        </template>
+
+        <template id="formControl_number">
+          <div>
+            <label>
+              <input type="number" value="" />
+            </label>
+          </div>
+        </template>
+
+        <template id="formControl_color">
+          <div>
+            <label>
+              <input type="color" value="" />
+            </label>
+          </div>
+        </template>
+
+        <template id="formControl_fontWeight">
+          <div>
+            <label>
+              <select>
+                <option value="1">Normal</option>
+                <option value="2">Bold</option>
+                <option value="3">Extra Bold</option>
+              </select>
+            </label>
+          </div>
+        </template>
+      </div>
     </div>
 
     <script src="./index.js" type="module"></script>

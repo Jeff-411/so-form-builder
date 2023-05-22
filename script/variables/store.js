@@ -3,16 +3,18 @@ import { defaultUserVars } from './userVars.js'
 export const getUser = () => {
   let user = null
 
-  localStorage.clear() // <-- DEBUG: UNCOMMENT THIS LINE TO CLEAR LOCAL STORAGE
+  // localStorage.clear() // <-- DEBUG: Uncomment to clear storage
 
-  // If the user object does not exist in local storage,
-  // create it and save it to local storage.
+  /** If local storage doesn't contain a "user" object,
+   *    => return "defaultUserVars"
+   *    => add "defaultUserVars" to local storage as "user"
+   *
+   *  Otherwise => just return the "user" from local storage
+   */
   if (localStorage.getItem('user') === null) {
     user = defaultUserVars
     localStorage.setItem('user', JSON.stringify(user))
-  }
-  // Otherwise, just load the user object from local storage.
-  else user = JSON.parse(localStorage.getItem('user'))
+  } else user = JSON.parse(localStorage.getItem('user'))
 
   return user
 }

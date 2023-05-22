@@ -6,14 +6,15 @@
  
 */
 import { getUser } from './script/variables/store.js'
-import { addListeners } from './script/helpers/listeners.js'
-import { testForm_styleMessages } from './script/helpers/testForm.js'
-import { addBaseForm } from './script/baseForm.js'
-import { addSpecialInputs } from './script/specialInputs.js'
+import { addForm } from './script/addForm.js'
+import { addListeners } from './script/helpers.js'
+import { test_styleMessages } from './script/tests/testForm.js'
 
 const user = getUser()
+const formTitle = 'Preferences'
+const specialInputs = ['fontWeight']
+const hasTip = ['fonts', 'ctrlTriggerBg']
 
-addBaseForm(user)
+addForm(user, formTitle, specialInputs, hasTip)
 addListeners(user)
-
-testForm_styleMessages()
+test_styleMessages()
