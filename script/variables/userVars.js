@@ -5,7 +5,7 @@
 export let defaultUserVars = {
   fonts: {
     fontScale: 1.5,
-    fontWeight: 600,
+    fontWeight: 3,
     textColors: {
       normal: '#000000',
       accent: '#ff0000',
