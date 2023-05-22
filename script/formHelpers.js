@@ -37,10 +37,11 @@ const addListeners = (user) => {
 }
 
 // Set the text content of labels and labels (for each key)
-const labels_legends = (key) => {
+const labels_legends = (key, formTitle) => {
   // prettier-ignore
   switch (key) {
-    case 'Preferences': 'Preferences'
+    // case 'Preferences': return 'Preferences'
+    case formTitle: return formTitle
     
     case 'fonts': return 'Fonts'
     case 'fontScale': return 'Size'
@@ -59,7 +60,7 @@ const labels_legends = (key) => {
     case 'triggerTopPanes': return ''
     case 'triggerNavpane': return ''
     case 'triggerLeftRail': return ''
-    default: alert(`UNKNOWN KEY - ${key}`)
+    // default: alert(`UNKNOWN KEY - ${key}`)
   }
 }
 
