@@ -83,7 +83,8 @@ export const addForm = (user, formTitle, specialInputs, hasTip) => {
     const formGroup = document.querySelector('#formGroup')
     const group = formGroup.content.cloneNode(true)
     group.querySelector('fieldset').id = key
-    group.querySelector('legend').textContent = labels_legends(key)
+    console.log(`labels_legends(key)`, labels_legends(key))
+    group.querySelector('legend').textContent = labels_legends(key, formTitle)
 
     // Add a tip to the form group
     if (hasTip.includes(key)) {
