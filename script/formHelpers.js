@@ -13,7 +13,7 @@ const addListeners = (user) => {
 
         // update user object with form data
         user.fonts.fontScale = Number(data.fontScale)
-        user.fonts.fontWeight = Number(data.fontWeight)
+        user.fonts.fontWeight = data.fontWeight
         user.fonts.textColors.normal = data.normal
         user.fonts.textColors.accent = data.accent
 

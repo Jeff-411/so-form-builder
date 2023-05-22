@@ -14,7 +14,7 @@ form {
   legend {
     font-size: 32px;
   }
-  .tips {
+  .group--tip-content {
     * {
       width: 100%;
     }
@@ -32,6 +32,11 @@ form {
     padding: 8px;
     margin-bottom: 20px;
   }
+  select {
+    padding: 8px;
+    margin-bottom: 20px;
+    border: 2px solidF black;
+  }
 
   [type='submit'] {
     padding: 10px 20px;
@@ -46,7 +51,7 @@ form {
 
 // Specific fieldsets
 #ctrlTriggerBg {
-  > div:not(.tips) {
+  > div:not(.group--tip-content) {
     display: inline-block;
   }
 }

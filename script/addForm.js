@@ -1,4 +1,4 @@
-import { labels_legends } from './helpers.js'
+import { labels_legends } from './formHelpers.js'
 
 export const addForm = (user, formTitle, specialInputs, hasTip) => {
   const obj = user
