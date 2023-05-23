@@ -41,6 +41,7 @@ const addListeners = (user) => {
 const setLabelsAndLegends = (key) => {
   // prettier-ignore
   switch (key) {
+
     case 'fonts': return 'Fonts'
     case 'fontScale': return 'Size'
     case 'fontWeight': return 'Weight'
@@ -61,7 +62,7 @@ const setLabelsAndLegends = (key) => {
     case 'triggerTopPanes': return ''
     case 'triggerNavpane': return ''
     case 'triggerLeftRail': return ''
-    default: alert(`UNKNOWN KEY - ${key}`)
+    // default: alert(`UNKNOWN KEY - ${key}`)
   }
 }
 

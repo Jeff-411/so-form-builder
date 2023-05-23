@@ -125,6 +125,7 @@ export const addForm = (user, formTitle, specialInputs, hasTip) => {
     if (key === formTitle) legend.textContent = key
     else legend.textContent = setLabelsAndLegends(key)
 
+
     // Add a tip to the form group
     if (hasTip.includes(key)) {
       const tipTemplate = document.querySelector(`#template__tip_${key}`)
