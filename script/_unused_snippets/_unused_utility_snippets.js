@@ -14,7 +14,7 @@ let user = {
   selectLayout: {
     layout: [0, 'radio'],
   },
-  layout1: {
+  customLayout: {
     // Control bar
     ctrlBarWidth_px: 20,
     ctrlBarPrimaryHeight_px: 10,

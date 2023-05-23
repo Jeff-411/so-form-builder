@@ -37,7 +37,11 @@ form {
     margin-bottom: 20px;
     border: 2px solidF black;
   }
-
+  #selectLayout :nth-child(3) {
+    > div {
+      display: block;
+    }
+  }
   [type='submit'] {
     padding: 10px 20px;
     font-size: 28px;
