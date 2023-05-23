@@ -11,10 +11,10 @@ export let defaultUserVars = {
       accent: '#ff0000',
     },
   },
-  // selectLayout: {
-  //   layout: 0,
-  // },
-  layout1: {
+  selectLayout: {
+    layout: 'Outlook_default', // Outlook_default | Custom_layout
+  },
+  customLayout: {
     ctrlBarWidth: 20,
     ctrlTriggerShort: 10,
     ctrlTriggerTall: 80,

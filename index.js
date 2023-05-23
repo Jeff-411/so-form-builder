@@ -12,7 +12,7 @@ import { test_styleMessages } from './script/tests/testForm.js'
 
 const user = getUser()
 const formTitle = 'Preferences'
-const specialInputs = ['fontWeight']
+const specialInputs = ['fontWeight', 'layout']
 const hasTip = ['fonts', 'ctrlTriggerBg']
 
 addForm(user, formTitle, specialInputs, hasTip)

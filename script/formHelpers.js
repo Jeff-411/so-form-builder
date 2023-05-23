@@ -17,14 +17,15 @@ const addListeners = (user) => {
         user.fonts.textColors.normal = data.normal
         user.fonts.textColors.accent = data.accent
 
-        user.layout1.ctrlBarWidth = Number(data.ctrlBarWidth)
-        user.layout1.ctrlTriggerShort = Number(data.ctrlTriggerShort)
-        user.layout1.ctrlTriggerTall = Number(data.ctrlTriggerTall)
+        user.selectLayout.layout = data.layout
 
-        user.layout1.ctrlTriggerBg.triggerPrefs = data.triggerPrefs
-        user.layout1.ctrlTriggerBg.triggerTopPanes = data.triggerTopPanes
-        user.layout1.ctrlTriggerBg.triggerNavpane = data.triggerNavpane
-        user.layout1.ctrlTriggerBg.triggerLeftRail = data.triggerLeftRail
+        user.customLayout.ctrlBarWidth = Number(data.ctrlBarWidth)
+        user.customLayout.ctrlTriggerShort = Number(data.ctrlTriggerShort)
+        user.customLayout.ctrlTriggerTall = Number(data.ctrlTriggerTall)
+        user.customLayout.ctrlTriggerBg.triggerPrefs = data.triggerPrefs
+        user.customLayout.ctrlTriggerBg.triggerTopPanes = data.triggerTopPanes
+        user.customLayout.ctrlTriggerBg.triggerNavpane = data.triggerNavpane
+        user.customLayout.ctrlTriggerBg.triggerLeftRail = data.triggerLeftRail
 
         // Save the user object to local storage & reload the page
         localStorage.setItem('user', JSON.stringify(user))
@@ -36,13 +37,11 @@ const addListeners = (user) => {
   listeners.addFormListeners()
 }
 
-// Set the text content of labels and labels (for each key)
-const labels_legends = (key, formTitle) => {
+// Note: Does not handle the form title or any special inputs
+const setLabelsAndLegends = (key) => {
   // prettier-ignore
   switch (key) {
-    // case 'Preferences': return 'Preferences'
-    case formTitle: return formTitle
-    
+
     case 'fonts': return 'Fonts'
     case 'fontScale': return 'Size'
     case 'fontWeight': return 'Weight'
@@ -50,7 +49,10 @@ const labels_legends = (key, formTitle) => {
     case 'normal': return 'Normal'
     case 'accent': return 'Accent'
 
-    case 'layout1': return 'Layout1'
+    case 'selectLayout': return 'Select layout'
+    case 'layout': return 'Layout'
+
+    case 'customLayout': return 'Custom Layout'
     case 'ctrlBarWidth': return 'Width of bar'
     case 'ctrlTriggerShort': return 'Short button height'
     case 'ctrlTriggerTall': return 'Tall button height'
@@ -64,4 +66,10 @@ const labels_legends = (key, formTitle) => {
   }
 }
 
-export { addListeners, labels_legends }
+const setSpecial = (key) => {
+  switch (key) {
+    // prettier-ignore
+    case 'layout': return ['Outlook_default', 'Custom_layout']
+  }
+}
+export { addListeners, setLabelsAndLegends, setSpecial }
