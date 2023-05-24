@@ -37,7 +37,7 @@ const addListeners = (user) => {
   listeners.addFormListeners()
 }
 
-// Note: Does not handle the form title or any special inputs
+// Note: Does not handle the form's title or any special inputs
 const setLabelsAndLegends = (key) => {
   // prettier-ignore
   switch (key) {
@@ -62,7 +62,32 @@ const setLabelsAndLegends = (key) => {
     case 'triggerTopPanes': return ''
     case 'triggerNavpane': return ''
     case 'triggerLeftRail': return ''
-    // default: alert(`UNKNOWN KEY - ${key}`)
+    default: alert(`UNKNOWN KEY - ${key}`)
+  }
+}
+
+const getTemplate_standard = (value) => {
+  //prettier-ignore
+  switch (typeof value) {
+    case 'number': return document.getElementById('formControl_number')
+    case 'string':
+      if (value.slice(0, 1) === '#') return document.getElementById('formControl_color')
+      else return document.getElementById('formControl_text')
+
+    default: alert(`UNKNOWN INPUT TYPE - ${typeof value}`)
+  }
+}
+
+const getInputSteps = (key) => {
+  switch (key) {
+    case 'fontScale':
+      return 0.5
+    case 'ctrlBarWidth_px':
+    case 'triggerTopPanesHeight':
+    case 'triggerNavpaneHeight':
+    case 'triggerLeftRailHeight':
+    case 'ctrlBarPrimaryHeight_px':
+      return 10
   }
 }
 
@@ -72,4 +97,11 @@ const setSpecial = (key) => {
     case 'layout': return ['Outlook_default', 'Custom_layout']
   }
 }
-export { addListeners, setLabelsAndLegends, setSpecial }
+
+export {
+  addListeners,
+  setLabelsAndLegends,
+  setSpecial,
+  getTemplate_standard,
+  getInputSteps,
+}
