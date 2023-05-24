@@ -4,12 +4,9 @@ export const addControl_special = (user, key, value, control) => {
   switch (key) {
     case 'fontWeight':
       // INPUT TYPE: select (HTML element)
-      const label = control.querySelector('label')
-      label.innerText = config.labelsAndLegends(key)
-
-      const select = control.querySelector('select')
-      select.name = key
-      select.value = value
+      control.querySelector('label').innerText = config.labelsAndLegends(key)
+      control.querySelector('select').name = key
+      control.querySelector('select').value = value
       break
     case 'layout':
       // INPUT TYPE: radio
