@@ -1,6 +1,6 @@
-import { setLabelsAndLegends, getTemplate_standard } from './formHelpers.js'
-import { addControl_standard } from './addControlStandard.js'
-import { addControl_special } from './addControlSpecial.js'
+import { config } from './variables/config.js'
+import { addControl_standard } from './formControls/addStandard.js'
+import { addControl_special } from './formControls/addSpecial.js'
 
 export const addForm = (user, formTitle, specialInputs, hasTip) => {
   const obj = user
@@ -20,7 +20,7 @@ export const addForm = (user, formTitle, specialInputs, hasTip) => {
 
           addControl_special(user, key, value, control)
         } else {
-          control = getTemplate_standard(value).content.cloneNode(true)
+          control = config.template_standard(value).content.cloneNode(true)
           addControl_standard(key, value, control)
         }
       }
@@ -39,7 +39,7 @@ export const addForm = (user, formTitle, specialInputs, hasTip) => {
     // Set the form group's legend
     let legend = group.querySelector('legend')
     if (key === formTitle) legend.textContent = key
-    else legend.textContent = setLabelsAndLegends(key)
+    else legend.textContent = config.labelsAndLegends(key)
 
     // Add a tip to the form group
     if (hasTip.includes(key)) {

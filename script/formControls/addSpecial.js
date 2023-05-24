@@ -1,11 +1,11 @@
-import { setLabelsAndLegends, setSpecial } from './formHelpers.js'
+import { config } from '../variables/config.js'
 
 export const addControl_special = (user, key, value, control) => {
   switch (key) {
     case 'fontWeight':
       // INPUT TYPE: select (HTML element)
       const label = control.querySelector('label')
-      label.innerText = setLabelsAndLegends(key)
+      label.innerText = config.labelsAndLegends(key)
 
       const select = control.querySelector('select')
       select.name = key
@@ -13,7 +13,7 @@ export const addControl_special = (user, key, value, control) => {
       break
     case 'layout':
       // INPUT TYPE: radio
-      const inputOptions = setSpecial(key)
+      const inputOptions = config.formControl_inputOptions(key)
       const inputs = control.querySelectorAll('input')
       const labels = control.querySelectorAll('label')
       for (let i = 0; i < inputOptions.length; i++) {
