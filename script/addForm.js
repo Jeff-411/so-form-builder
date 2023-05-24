@@ -9,10 +9,7 @@ export const addForm = (user, formTitle, specialInputs, hasTip) => {
     for (const [key, value] of Object.entries(obj)) {
       let control = null
 
-      if (typeof value === 'object') control = addFormGroup(key, value)
-      else addControl()
-
-      function addControl() {
+      const addControl = () => {
         if (specialInputs.includes(key)) {
           control = document
             .getElementById(`formControl_${key}`)
@@ -25,6 +22,10 @@ export const addForm = (user, formTitle, specialInputs, hasTip) => {
         }
       }
 
+      typeof value === 'object'
+        ? (control = addFormGroup(key, value)) // RECURSION: addFormGroup()
+        : addControl()
+
       document.get
       group.querySelector('fieldset').appendChild(control)
     }
@@ -32,31 +33,34 @@ export const addForm = (user, formTitle, specialInputs, hasTip) => {
 
   const addFormGroup = (key, obj) => {
     // Create a form group
-    const formGroup = document.querySelector('#formGroup')
-    const group = formGroup.content.cloneNode(true)
+    const group = document.querySelector('#formGroup').content.cloneNode(true)
     group.querySelector('fieldset').id = key
 
     // Set the form group's legend
-    let legend = group.querySelector('legend')
-    if (key === formTitle) legend.textContent = key
-    else legend.textContent = config.labelsAndLegends(key)
+    key === formTitle
+      ? (group.querySelector('legend').textContent = key)
+      : (group.querySelector('legend').textContent =
+          config.labelsAndLegends(key))
 
-    // Add a tip to the form group
-    if (hasTip.includes(key)) {
-      const tipTemplate = document.querySelector(`#template__tip_${key}`)
-      const tip = tipTemplate.content.cloneNode(true)
-      group.querySelector('.group--tip-content').appendChild(tip)
-    }
+    // Add a tip to selected form groups
+    hasTip.includes(key)
+      ? group
+          .querySelector('.group--tip-content')
+          .appendChild(
+            document
+              .querySelector(`#template__tip_${key}`)
+              .content.cloneNode(true)
+          )
+      : null
 
     // Add form-controls to the form group
     addFormControl(obj, group)
     return group
   }
 
-  if ('content' in document.createElement('template')) {
-    const insertionPoint = document.querySelector('#form_content')
-    insertionPoint.appendChild(addFormGroup(formTitle, obj))
-  } else {
-    console.log('Error, browser version does not support templates')
-  }
+  'content' in document.createElement('template')
+    ? document
+        .querySelector('#form_content')
+        .appendChild(addFormGroup(formTitle, obj))
+    : console.log('Error, browser version does not support templates')
 }
