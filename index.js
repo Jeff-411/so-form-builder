@@ -7,7 +7,7 @@
 */
 import { getUser } from './script/variables/store.js'
 import { addForm } from './script/addForm.js'
-import { addListeners } from './script/formHelpers.js'
+import { addListeners } from './script/addListeners.js'
 import { test_styleMessages } from './script/tests/testForm.js'
 
 const user = getUser()

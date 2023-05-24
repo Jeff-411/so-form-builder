@@ -1,5 +1,5 @@
 // Add the form's listeners
-const addListeners = (user) => {
+export const addListeners = (user) => {
   const listeners = {
     addFormListeners: () => {
       const form_userPrefs = document.querySelector('#form_userPrefs')
@@ -36,40 +36,3 @@ const addListeners = (user) => {
 
   listeners.addFormListeners()
 }
-
-// Note: Does not handle the form title or any special inputs
-const setLabelsAndLegends = (key) => {
-  // prettier-ignore
-  switch (key) {
-
-    case 'fonts': return 'Fonts'
-    case 'fontScale': return 'Size'
-    case 'fontWeight': return 'Weight'
-    case 'textColors': return 'Colors'
-    case 'normal': return 'Normal'
-    case 'accent': return 'Accent'
-
-    case 'selectLayout': return 'Select layout'
-    case 'layout': return 'Layout'
-
-    case 'customLayout': return 'Custom Layout'
-    case 'ctrlBarWidth': return 'Width of bar'
-    case 'ctrlTriggerShort': return 'Short button height'
-    case 'ctrlTriggerTall': return 'Tall button height'
-
-    case 'ctrlTriggerBg': return 'Colors'
-    case 'triggerPrefs': return ''
-    case 'triggerTopPanes': return ''
-    case 'triggerNavpane': return ''
-    case 'triggerLeftRail': return ''
-    // default: alert(`UNKNOWN KEY - ${key}`)
-  }
-}
-
-const setSpecial = (key) => {
-  switch (key) {
-    // prettier-ignore
-    case 'layout': return ['Outlook_default', 'Custom_layout']
-  }
-}
-export { addListeners, setLabelsAndLegends, setSpecial }
