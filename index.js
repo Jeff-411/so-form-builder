@@ -6,6 +6,7 @@
  
 */
 import { getUser } from './script/variables/store.js'
+import { addTemplates } from './script/addTemplates.js'
 import { addForm } from './script/addForm.js'
 import { addListeners } from './script/addListeners.js'
 import { test_styleMessages } from './script/tests/testForm.js'
@@ -15,6 +16,17 @@ const formTitle = 'Preferences'
 const specialInputs = ['fontWeight', 'layout']
 const hasTip = ['fonts', 'ctrlTriggerBg']
 
-addForm(user, formTitle, specialInputs, hasTip)
-addListeners(user)
-test_styleMessages()
+addTemplates()
+
+const start = () => {
+  clearInterval(isLoaded)
+
+  addForm(user, formTitle, specialInputs, hasTip)
+  addListeners(user)
+  test_styleMessages()
+}
+
+// Wait for the templates to load before starting
+let isLoaded = setInterval(() => {
+  if (document.querySelector('#templates')) start()
+}, 50)
