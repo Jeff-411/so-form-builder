@@ -8,7 +8,6 @@
     <title>FORMS</title>
   </head>
   <body>
-    <!-- Left pane ----------------------------------------------------------->
     <div id="pane-left">
       <header></header>
 
@@ -23,7 +22,6 @@
       </div>
     </div>
 
-    <!-- Right pane ---------------------------------------------------------->
     <div id="pane-right">
       <form id="form_userPrefs">
         <div id="form_content"></div>
@@ -31,93 +29,6 @@
           <input type="submit" value="Submit" />
         </footer>
       </form>
-    </div>
-
-    <!-- Templates ----------------------------------------------------------->
-    <div class="TEMPLATES">
-      <div class="FORM_GROUP">
-        <template id="formGroup">
-          <fieldset>
-            <legend></legend>
-            <div class="group--tip-content"></div>
-          </fieldset>
-        </template>
-      </div>
-
-      <div class="TIPS">
-        <template id="template__tip_fonts">
-          <div class="container-tip">
-            <details>
-              <summary>Inbox messages</summary>
-              <div class="tip">
-                These settings affect the fonts used for your Inbox messages.
-              </div>
-            </details>
-          </div>
-        </template>
-
-        <template id="template__tip_ctrlTriggerBg">
-          <div class="container-tip">
-            <details>
-              <summary>Top to bottom</summary>
-              <div class="tip">
-                This is the column of left-side buttons that show/hide elements,
-                like the Ribbon menu or Message folders (Inbox/ Sent items/
-                etc).
-              </div>
-            </details>
-          </div>
-        </template>
-      </div>
-
-      <div class="FORM_CONTROLS">
-        <template id="formControl_text">
-          <div>
-            <label>
-              <input type="text" value="" />
-            </label>
-          </div>
-        </template>
-
-        <template id="formControl_number">
-          <div>
-            <label>
-              <input type="number" value="" />
-            </label>
-          </div>
-        </template>
-
-        <template id="formControl_color">
-          <div>
-            <label>
-              <input type="color" value="" />
-            </label>
-          </div>
-        </template>
-
-        <template id="formControl_fontWeight">
-          <div>
-            <label></label>
-            <select>
-              <option value="normal">Normal</option>
-              <option value="bold">Bold</option>
-            </select>
-          </div>
-        </template>
-
-        <template id="formControl_layout">
-          <div>
-            <div>
-              <input type="radio" id="" name="" value="" />
-              <label></label>
-            </div>
-            <div>
-              <input type="radio" id="" name="" value="" />
-              <label></label>
-            </div>
-          </div>
-        </template>
-      </div>
     </div>
 
     <script src="./index.js" type="module"></script>

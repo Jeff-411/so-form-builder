@@ -48,7 +48,7 @@ export const addForm = (user, formTitle, specialInputs, hasTip) => {
           .querySelector('.group--tip-content')
           .appendChild(
             document
-              .querySelector(`#template__tip_${key}`)
+              .querySelector(`#formControlTip_${key}`)
               .content.cloneNode(true)
           )
       : null
