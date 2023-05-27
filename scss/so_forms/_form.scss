@@ -1,5 +1,6 @@
 // Elements
 form {
+  $inputWidth: 150px;
   * {
     font-size: 26px;
     background-color: white;
@@ -28,14 +29,16 @@ form {
     }
   }
   [type='number'] {
-    width: 150px;
+    width: calc($inputWidth - 18px); // allow for up/down arrows
+    text-align: right;
     padding: 8px;
     margin-bottom: 20px;
   }
   select {
+    width: $inputWidth;
     padding: 8px;
     margin-bottom: 20px;
-    border: 2px solidF black;
+    border: 1px solid black;
   }
   #selectLayout :nth-child(3) {
     > div {
