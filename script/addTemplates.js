@@ -1,10 +1,10 @@
 export const addTemplates = () => {
   // List of template files to add to the DOM
   const templateFileNames1 = [
-    'simple.html',
-    'special.html',
-    'tips.html',
-    'formGroup.html',
+    'controls_standard.html',
+    'controls_special.html',
+    'controls_tips.html',
+    'group.html',
   ]
 
   const newDiv = document.createElement('div')
