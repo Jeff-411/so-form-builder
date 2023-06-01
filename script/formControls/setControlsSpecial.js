@@ -1,17 +1,17 @@
 import { config } from '../variables/config.js'
 
-export const addControl_special = (user, key, value, control) => {
+export const setControl_special = (user, key, value, control) => {
   switch (key) {
     case 'fontWeight':
       // INPUT TYPE: select (HTML element)
-      control.querySelector('span').innerText = config.labelsAndLegends(key)
+      control.querySelector('span').innerText = config.displayNames(key)
       control.querySelector('select').name = key
       control.querySelector('select').value = value
       break
 
     case 'layout':
       // INPUT TYPE: radio
-      const inputOptions = config.formControl_inputOptions(key)
+      const inputOptions = config.getInputOptions_byControlId(key)
       const inputs = control.querySelectorAll('input')
       const labels = control.querySelectorAll('label')
       for (let i = 0; i < inputOptions.length; i++) {
@@ -39,4 +39,6 @@ export const addControl_special = (user, key, value, control) => {
     default:
       console.log(`SPECIAL => UNKNOWN KEY: ${key}`)
   }
+
+  return 'special done'
 }

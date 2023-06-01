@@ -1,8 +1,12 @@
 export const config = {
-  labelsAndLegends: (key) => {
+  formTitle: 'Preferences',
+  hasTipArr: ['fonts', 'ctrlTriggerBg'],
+  specialInputsArr: ['fontWeight', 'layout'],
+
+  displayNames: (key) => {
     // prettier-ignore
     switch (key) {
-
+      case `${config.formTitle}`: return `${config.formTitle}`
       case 'fonts': return 'Fonts'
       case 'fontScale': return 'Size'
       case 'fontWeight': return 'Weight'
@@ -26,17 +30,7 @@ export const config = {
       default: alert(`UNKNOWN KEY - ${key}`)
     }
   },
-  template_standard: (value) => {
-    //prettier-ignore
-    switch (typeof value) {
-      case 'number': return document.getElementById('formControl_number')
-      case 'string':
-        if (value.slice(0, 1) === '#') return document.getElementById('formControl_color')
-        else return document.getElementById('formControl_text')
 
-      default: alert(`UNKNOWN INPUT TYPE - ${typeof value}`)
-    }
-  },
   inputSteps: (key) => {
     switch (key) {
       case 'fontScale':
@@ -49,7 +43,8 @@ export const config = {
         return 10
     }
   },
-  formControl_inputOptions: (key) => {
+
+  getInputOptions_byControlId: (key) => {
     switch (key) {
       // prettier-ignore
       case 'layout': return ['Outlook_default', 'Custom_layout']
