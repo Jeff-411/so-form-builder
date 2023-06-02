@@ -35,11 +35,9 @@ export const config = {
     switch (key) {
       case 'fontScale':
         return 0.5
-      case 'ctrlBarWidth_px':
-      case 'triggerTopPanesHeight':
-      case 'triggerNavpaneHeight':
-      case 'triggerLeftRailHeight':
-      case 'ctrlBarPrimaryHeight_px':
+      case 'ctrlBarWidth':
+      case 'ctrlTriggerShort':
+      case 'ctrlTriggerTall':
         return 10
     }
   },

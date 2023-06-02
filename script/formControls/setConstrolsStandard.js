@@ -10,4 +10,6 @@ export const setControl_standard = (key, value, control) => {
   input.name = key
   input.value = value
   input.step = config.inputSteps(key)
+  console.log(`key`, key)
+  console.log(`input.step`, input.step)
 }
